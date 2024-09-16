@@ -15,30 +15,20 @@ copyright : MIT
 """
 import numpy as np
 
-def LMS(data,filteredData,learningRate=0.01,filterSize=2**7):
+def LMS(input,output,learningRate=0.01,filterSize=2**7,error_history=False):
     mu = learningRate
     e_history = []
     h_h = np.zeros(filterSize)  # h hat
-    n_iter = min(len(data),len(filteredData))
-    for n in range(filterSize,n_iter):
-        x = np.flip(data[n-filterSize:n]) 
-        y_h = np.dot(h_h, x) 
-        d = filteredData[n] 
+    x = np.zeros(filterSize)
+    n_iter = min(len(input),len(output))
+    for n in range(n_iter):
+        x = np.append(input[n] , x[0:filterSize-1])
+        y_h = np.sum(np.dot(h_h, x)) 
+        d = output[n] 
         e = d - y_h  
         e_history.append(e)
         h_h = h_h + mu * e * x 
-    return h_h , e_history
-
-def LMS(data,filteredData,learningRate=0.01,filterSize=2**7):
-    mu = learningRate
-    e_history = []
-    h_h = np.zeros(filterSize)  # h hat
-    n_iter = min(len(data),len(filteredData))
-    for n in range(filterSize,n_iter):
-        x = np.flip(data[n-filterSize:n]) 
-        y_h = np.dot(h_h, x) 
-        d = filteredData[n] 
-        e = d - y_h  
-        e_history.append(e)
-        h_h = h_h + mu * e * x 
-    return h_h
+    if error_history:
+        return h_h , e_history
+    else:
+        return h_h
