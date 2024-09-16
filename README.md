@@ -6,7 +6,8 @@ Simple least mean squares algorithm.
 Pz = simpleLMS.LMS(data,record_data,0.02,filterSize)
 Pz,test_error = simpleLMS.LMS(data,record_data,0.02,filterSize,True)
 
-
+Wh = simpleLMS.FxLMS(data,record_data,SzW,0.002,filterSize)
+Wh,test_error = simpleLMS.FxLMS(data,record_data,SzW,0.002,filterSize,True)
 ```
 # Result
 ## LMS
