@@ -1,6 +1,9 @@
 # simpleLMS
 Simple least mean squares(LMS) and filtered least mean squares(FxLMS) algorithm.
 
+![Blank diagram - Page 1 (1)](https://github.com/user-attachments/assets/3cafdcae-f87f-423d-bcbc-c06f81beca0e)
+
+
 # Useage
 ### LMS
 ```python
