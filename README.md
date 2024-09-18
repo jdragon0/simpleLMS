@@ -3,12 +3,10 @@ Simple least mean squares(LMS) and filtered least mean squares(FxLMS) algorithm.
 
 ## Block diagram
 ### LMS
-![Blank diagram - Page 1 (3)](https://github.com/user-attachments/assets/52696818-924b-492d-98cc-9970825c492d)
-
+<img src=https://github.com/user-attachments/assets/52696818-924b-492d-98cc-9970825c492d width="455" height="250"/>
 
 ### FxLMS
-![Blank diagram - Page 1 (1)](https://github.com/user-attachments/assets/3cafdcae-f87f-423d-bcbc-c06f81beca0e)
-
+<img src=https://github.com/user-attachments/assets/3cafdcae-f87f-423d-bcbc-c06f81beca0e width="440" height="245"/>
 
 # Useage
 ### LMS
